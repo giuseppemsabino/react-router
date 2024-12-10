@@ -1,11 +1,7 @@
-import Navbar from "../components/Navbar";
 
 export default function PostsPage(){
     return  (
-        <div>
-          <header>
-            <Navbar></Navbar>
-          </header>
+       
     
           <div className="container">
             <h1 className="mt-5">Post</h1>
@@ -16,6 +12,6 @@ export default function PostsPage(){
             <li><a href="#">post3</a></li>
             </ul>
           </div>
-        </div>
+        
       );
 }
