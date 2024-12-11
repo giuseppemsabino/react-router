@@ -9,6 +9,8 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import PostsPage from "./pages/PostsPage";
 import IndexPosts from "./pages/posts/indexPosts";
+import ShowPosts from "./pages/posts/ShowPosts";
+
 
 function App() {
   return (
@@ -18,9 +20,10 @@ function App() {
           <Route index Component={HomePage} />
           <Route path="/about" Component={AboutPage} />
           <Route path="/post" Component={PostsPage} />
-          
+
           <Route path="/posts">
           <Route index Component={IndexPosts}/>
+          <Route path=":id" Component={ShowPosts}/>
           </Route>
         </Route>
       </Routes>
