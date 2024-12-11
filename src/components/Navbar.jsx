@@ -4,9 +4,9 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/">
-          Home
-        </NavLink>
+        <a className="navbar-brand" href="#">
+          {import.meta.VITE_APP_NAME || 'React App'}
+        </a>
         <button
           className="navbar-toggler"
           type="button"
