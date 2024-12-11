@@ -30,6 +30,11 @@ export default function Navbar() {
                 Post List
               </NavLink>
             </li>
+            <li className="nav-item">
+            <NavLink className="nav-link " aria-current="page" to="/posts">
+                Posts
+              </NavLink>
+            </li>
             
           </ul>
         </div>
