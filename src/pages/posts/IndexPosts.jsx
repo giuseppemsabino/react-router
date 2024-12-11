@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function IndexPosts() {
-    const [posts,setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
   const apiUrl = import.meta.env.VITE_API_URL;
   //   console.log(apiUrl);
 
@@ -20,9 +20,8 @@ export default function IndexPosts() {
           category: post.category,
           published: post.published,
         }));
-        setPosts(postsData)
+        setPosts(postsData);
         console.log(postsData);
-        
       });
   };
 
@@ -30,46 +29,34 @@ export default function IndexPosts() {
     <div className="container">
       <h1 className="mt-5">Lista dei post</h1>
 
-      <table className="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Immagine</th>
-            <th scope="col">Titolo</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Pubblicato</th>
-            <th scope="col">Preview</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">immagine</th>
-            <td>post article</td>
-            <td>food</td>
-            <td>false</td>
-            <td>
-              <a href="#">Show</a>-<a href="#">Edit</a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">immagine</th>
-            <td>post article</td>
-            <td>food</td>
-            <td>false</td>
-            <td>
-              <a href="#">Show</a>-<a href="#">Edit</a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">immagine</th>
-            <td>post article</td>
-            <td>food</td>
-            <td>false</td>
-            <td>
-              <a href="#">Show</a>-<a href="#">Edit</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      {posts.length > 0 ? (
+        <table className="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Immagine</th>
+              <th scope="col">Titolo</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Pubblicato</th>
+              <th scope="col">Preview</th>
+            </tr>
+          </thead>
+          <tbody>
+            {posts.map(post =>  
+            <tr key={post.id}>
+              <th scope="row"><img src={post.image} alt="" /></th>
+              <td>post article</td>
+              <td>food</td>
+              <td>false</td>
+              <td>
+                <a href="#">Show</a>-<a href="#">Edit</a>
+              </td>
+            </tr>)}
+           
+          </tbody>
+        </table>
+      ) : (
+        <h3 className="mt-4">No Posts</h3>
+      )}
     </div>
   );
 }
