@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function IndexPosts() {
+    const [posts,setPosts] = useState([])
   const apiUrl = import.meta.env.VITE_API_URL;
   //   console.log(apiUrl);
 
@@ -12,17 +13,16 @@ export default function IndexPosts() {
     fetch(apiUrl + "/")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        const postsData = data.map((post) => ({
+          id: post.id,
+          image: post.image,
+          title: post.title,
+          category: post.category,
+          published: post.published,
+        }));
+        setPosts(postsData)
+        console.log(postsData);
         
-        console.log(
-          data.map((post) => ({
-            id: post.id,
-            image: post.image,
-            title: post.title,
-            category: post.category,
-            published: post.published,
-          }))
-        );
       });
   };
 
