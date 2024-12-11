@@ -43,10 +43,10 @@ export default function IndexPosts() {
           <tbody>
             {posts.map(post =>  
             <tr key={post.id}>
-              <th scope="row"><img src={post.image} alt="" /></th>
-              <td>post article</td>
-              <td>food</td>
-              <td>false</td>
+              <th scope="row"><img src={apiUrl+post.image}  width={50} alt="" /></th>
+              <td>{post.title}</td>
+              <td>{post.category}</td>
+              <td>{post.published}</td>
               <td>
                 <a href="#">Show</a>-<a href="#">Edit</a>
               </td>
