@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
 export default function IndexPosts() {
+
+    const apiUrl = import.meta.env.VITE_API_URL
+    // console.log(apiUrl);
     
+
   return (
     <div className="container">
       <h1 className="mt-5">Lista dei post</h1>
