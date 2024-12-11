@@ -46,7 +46,7 @@ export default function IndexPosts() {
               <th scope="row"><img src={apiUrl+post.image}  width={50} alt="" /></th>
               <td>{post.title}</td>
               <td>{post.category}</td>
-              <td>{post.published}</td>
+              <td>{post.published ? 'Si' : 'No'}</td>
               <td>
                 <a href="#">Show</a>-<a href="#">Edit</a>
               </td>
