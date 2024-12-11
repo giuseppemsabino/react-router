@@ -1,4 +1,15 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 export default function IndexPosts() {
+    const [posts, setPosts] = useEffect([])
+
+    useEffect(() => {
+        fetch("http://localhost:3000/posts")
+          .then(response => response.json())
+          .then(data => setPosts(data))
+          .catch(err => console.error(err));
+      }, []);
   return (
     <div className="container">
       <h1 className="mt-5">Lista dei post</h1>
